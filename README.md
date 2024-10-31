@@ -32,7 +32,7 @@ Usage
 
     BugBounty -f subdomain.txt
     
-`More Then File``
+`More Then File`
 
     BugBounty -f subdomain.txt subdomain2.txt subdomain3.txt
 
