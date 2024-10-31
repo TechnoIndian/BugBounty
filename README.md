@@ -12,87 +12,111 @@
 <a href="https://t.me/rktechnoindians"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&size=35&pause=1000&color=F74848&center=true&vCenter=true&random=false&width=435&lines=BugBounty" /></a>
  </p>
 
-<p align="center">
-<a href="https://t.me/rktechnoindians"><img src="https://s10.gifyu.com/images/SrIwA.gif"></a>
-</p>
-
 
 Install
 -------
 
 **Bug Bounty**
 
-    $ python3 -m pip install BugBounty
-
-or
-
-    $ git clone https://github.com/Technoindian/BugBounty
-    $ cd BugBounty
-    $ python3 -m pip install -r requirements.txt
-    $ python3 setup.py install
-
+    python3 -m pip install BugBounty
 
 Usage
 -----
 
 **Bug Bounty**
 
-Scan only when using the website quota you want to scan
 
-`--mode -f (File_Path)`
+**Mode -f (File_Path)**
 
-    $ BugBounty -f subdomain.txt
+`For One File Only`
 
-`--mode -c (cidr/ip-range)`
+    BugBounty -f subdomain.txt
+    
+`More Then File``
+
+    BugBounty -f subdomain.txt subdomain2.txt subdomain3.txt
+
+**Mode -c (cidr/ip-range)**
+
+`For One CIDR Only`
 
     BugBounty -c 127.0.0.1/24
+    
+`More Then CIDR`
 
-`--mode -f & -c for -p (Port)`
+    BugBounty -c 127.0.0.1/24 128.0.0.0/24 104.18.25.0/30
+
+**Mode -f & -c for -p (Port)**
+
+`For One Port Only`
 
     BugBounty -f subdomain.txt --p 443
     
+`More Then Port`
+    
     BugBounty -f subdomain.txt --p 80 443 53
 
-`--mode http & https`
+**Mode http & https**
 
     BugBounty -f subdomain.txt -http
     
-`--mode -m (Methods) (GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE)`
+**Mode -m (Methods) (GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE)**
 
     BugBounty -f subdomain.txt -m GET
 
-`--mode in -c & -f for -t (timeout) -T (Thareds) -o (Output)`
+**Mode in -c & -f for -t (timeout) -T (Thareds) -o (Output)**
+
+`-t (timeout)`
 
     BugBounty -f subdomain.txt -t 3
+    
+`-T (Thareds)`
+    
     BugBounty -f subdomain.txt -T 100
+    
+`-o (Output)`
+    
     BugBounty -f subdomain.txt -o /sdcard/other_result.txt
     
-<!-- -->
+`File Scan`
 
     BugBounty -f subdomain.txt -p 80 443 -m GET -t 3 -T 100
+    
+`Cidr/IP-Range Scan`
+    
     BugBounty -c 127.0.0.1/24 -p 80 443 -m GET -t 3 -T 100
 
+**-m2, (mode2) ➸ Another Scanning Method ( Target Reachable Server )**
 
-**Bug Bounty (Other Features)**
+`File Scan`
+
+    BugBounty -f subdomain.txt -m2
+    
+`Cidr/IP-Range Scan`
+    
+    BugBounty -c 127.0.0.1/24 -m2
 
 
-`--mode -i (IP) (Host/Domain to IPV4 & IPV6 IP Convert)`
+Bug Bounty (Other Features)
+
+
+**Mode -i (IP) (Host/Domain to IPV4 & IPV6 IP Convert)**
 
     BugBounty -i crazyegg.com
     
-`--mode -tls (TLS Version/Cipher Connection Check )`
+**Mode -tls (TLS Version/Cipher Connection Check )**
 
     BugBounty -tls crazyegg.com
 
-`--mode -rr (RESPONSE) (Host/Domain/IP to Header Response)`
+**Mode -rr (RESPONSE) (Host/Domain/IP to Header Response)**
 
     BugBounty -rr crazyegg.com
 
-`--mode -r (REVERSE) (Reverse IP LookUp)`
+**Mode -r (REVERSE) (Reverse IP LookUp)**
 
     BugBounty -r crazyegg.com
 
-`--mode -op (OpenPort) (Host/Domain/IP to Open Port)`
+**Mode -op (OpenPort) (Host/Domain/IP to Open Port)**
 
     BugBounty -op crazyegg.com
     
